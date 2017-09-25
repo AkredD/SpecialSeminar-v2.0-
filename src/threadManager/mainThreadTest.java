@@ -29,7 +29,6 @@ public class mainThreadTest {
         Manager manager = new Manager(writer, maxResourse, workingTime);
         QueryGenerator queryGenerator = new QueryGenerator(writer, manager, maxResourse);
         //QueryGenerator queryGenerator2 = new QueryGenerator(writer, manager, maxResourse);
-        manager.start();
         queryGenerator.start();
         //queryGenerator2.start();
         try {
@@ -38,7 +37,7 @@ public class mainThreadTest {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        writer.stop();
+        writer.stopWrite();
     }
 
     private static class Scanner {

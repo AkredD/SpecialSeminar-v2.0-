@@ -12,8 +12,8 @@ import java.util.StringTokenizer;
 
 
 public class QueryGenerator extends Thread {
-    private static final int maxSleepTime = 500;
-    private static final int maxWorkerSleepTime = 2000;
+    private static final int maxSleepTime = 1000;
+    private static final int maxWorkerSleepTime = 500;
     private Writer writer;
     private Manager manager;
     private int resourceMax;
@@ -34,7 +34,7 @@ public class QueryGenerator extends Thread {
             getQuery.start();
             ++i;
             try {
-                sleep(random.nextInt(maxSleepTime));
+                sleep(random.nextInt(maxWorkerSleepTime));
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

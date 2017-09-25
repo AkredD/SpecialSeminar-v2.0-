@@ -9,7 +9,7 @@ import java.util.StringTokenizer;
  */
 
 
-public class Writer  {
+public class Writer{
     private static PrintWriter out;
     public Writer(String logFile) {
         try {
@@ -19,14 +19,14 @@ public class Writer  {
         }
     }
 
-    public void writeInLog(Object[] a) {
+    public synchronized void writeInLog(Object[] a) {
         for (int i = 0; i < a.length; ++i) {
             out.print(a[i].toString());
             out.print(" ");
         }
         out.println();
     }
-    public void stop(){
+    public void stopWrite(){
         out.close();
     }
 

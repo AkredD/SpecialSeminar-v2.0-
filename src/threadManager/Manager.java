@@ -22,6 +22,7 @@ public class Manager extends Thread {
         this.resourse = maxResourse;
         this.workingTime = workingTime;
         this.writer = writer;
+        this.start();
     }
 
 
