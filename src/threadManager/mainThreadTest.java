@@ -28,10 +28,13 @@ public class mainThreadTest {
         Writer writer = new Writer(logFile);
         Manager manager = new Manager(writer, maxResourse, workingTime);
         QueryGenerator queryGenerator = new QueryGenerator(writer, manager, maxResourse);
+        //QueryGenerator queryGenerator2 = new QueryGenerator(writer, manager, maxResourse);
         manager.start();
         queryGenerator.start();
+        //queryGenerator2.start();
         try {
             queryGenerator.join();
+            //queryGenerator2.join();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

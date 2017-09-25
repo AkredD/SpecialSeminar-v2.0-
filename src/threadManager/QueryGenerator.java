@@ -64,13 +64,14 @@ public class QueryGenerator extends Thread {
             super.run();
             writer.writeInLog(new Object[] {name, "started"});
             Random random = new Random();
-            int concreteResourses= random.nextInt(resourceMax+4);
+            int concreteResourses= random.nextInt(resourceMax);
             try {
                 manager.getResourses(concreteResourses);
                 manager.returnResourses(concreteResourses);
-                writer.writeInLog(new Object[] {name, "- returned resourses"});
+                writer.writeInLog(new Object[] {name, "- returned resourses and stoped"});
             }catch (NoSuchElementException e){
                 writer.writeInLog(new Object[] {e});
+                writer.writeInLog(new Object[] {name, "- stoped"});
             }
 
 
