@@ -1,0 +1,80 @@
+server started with 2 resourses 
+worker number 0 started 
+server give 1 
+server get 1 back 
+worker number 0 - returned resourses 
+worker number 1 started 
+server can't give 3 
+java.util.NoSuchElementException: not enough resourses 
+worker number 2 started 
+server can't give 5 
+java.util.NoSuchElementException: not enough resourses 
+worker number 3 started 
+server can't give 4 
+java.util.NoSuchElementException: not enough resourses 
+worker number 4 started 
+server can't give 4 
+java.util.NoSuchElementException: not enough resourses 
+worker number 5 started 
+server can't give 5 
+java.util.NoSuchElementException: not enough resourses 
+worker number 6 started 
+server can't give 4 
+java.util.NoSuchElementException: not enough resourses 
+worker number 7 started 
+server can't give 4 
+java.util.NoSuchElementException: not enough resourses 
+worker number 8 started 
+server can't give 4 
+java.util.NoSuchElementException: not enough resourses 
+worker number 9 started 
+server give 1 
+server get 1 back 
+worker number 9 - returned resourses 
+worker number 10 started 
+server can't give 3 
+java.util.NoSuchElementException: not enough resourses 
+worker number 11 started 
+server can't give 5 
+java.util.NoSuchElementException: not enough resourses 
+worker number 12 started 
+server give 0 
+server get 0 back 
+worker number 12 - returned resourses 
+worker number 13 started 
+server can't give 3 
+java.util.NoSuchElementException: not enough resourses 
+worker number 14 started 
+server can't give 5 
+java.util.NoSuchElementException: not enough resourses 
+worker number 15 started 
+server give 0 
+server get 0 back 
+worker number 15 - returned resourses 
+worker number 16 started 
+server can't give 4 
+java.util.NoSuchElementException: not enough resourses 
+worker number 17 started 
+server can't give 4 
+java.util.NoSuchElementException: not enough resourses 
+worker number 18 started 
+server can't give 5 
+java.util.NoSuchElementException: not enough resourses 
+worker number 19 started 
+server can't give 4 
+java.util.NoSuchElementException: not enough resourses 
+worker number 20 started 
+server can't give 5 
+java.util.NoSuchElementException: not enough resourses 
+worker number 21 started 
+server give 0 
+server get 0 back 
+worker number 21 - returned resourses 
+worker number 22 started 
+server can't give 4 
+java.util.NoSuchElementException: not enough resourses 
+worker number 23 started 
+server give 1 
+server get 1 back 
+worker number 23 - returned resourses 
+server stoped with 2 resourses 
