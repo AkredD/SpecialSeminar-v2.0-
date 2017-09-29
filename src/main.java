@@ -1,11 +1,13 @@
-import binaryTree.mainTreeTest;
-import threadManager.mainThreadTest;
+import employees.mainParseTest;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.StringTokenizer;
+import java.util.stream.Collectors;
 
 
 /**
@@ -15,10 +17,24 @@ import java.util.StringTokenizer;
 
 public class main {
     public static void main(String[] args) throws Exception {
+        Scanner sc = new Scanner(new File("input.txt"));
+        //Scanner sc = new Scanner(new File("mainTreeTest.in"));
+        PrintWriter out = new PrintWriter(new File("logs.txt"));
+        //PrintWriter out = new PrintWriter(new File("mainTreeTest.out"));
         //mainThreadTest threadTest = new mainThreadTest();
         //threadTest.main(new String[]{});
-        mainTreeTest treeTest = new mainTreeTest();
-        mainTreeTest.main(new String[]{});
+        //mainTreeTest treeTest = new mainTreeTest();
+        //mainTreeTest.main(new String[]{});
+        //mainParseTest parseTest = new mainParseTest();
+        //parseTest.main(new String[]{});
+
+        /*File file = new File("input.txt");
+        FileReader fr = new FileReader(file);
+        BufferedReader reader = new BufferedReader(fr);
+        out.print(Arrays.stream(reader.readLine().split(" ")).sorted().reduce((x,y) -> x + " " + y).get());*/
+
+        sc.close();
+        out.close();
     }
 
     private static class Scanner {
