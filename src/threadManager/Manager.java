@@ -6,20 +6,21 @@ import java.io.FileReader;
 import java.io.PrintWriter;
 import java.util.NoSuchElementException;
 import java.util.StringTokenizer;
+import java.util.concurrent.atomic.AtomicInteger;
 
 
 /**
  * Created by user on 25.09.2017.
  */
 
-//fixed synchronized resourse
+//fixed using AtomicInteger
 public class Manager extends Thread {
-    private static  int resourse;
+    private static  AtomicInteger resourse;
     private static int workingTime;
     private Writer writer;
 
     public Manager(Writer writer, int maxResourse, int workingTime){
-        this.resourse = maxResourse;
+        this.resourse.set(maxResourse);
         this.workingTime = workingTime;
         this.writer = writer;
         this.start();
@@ -28,7 +29,7 @@ public class Manager extends Thread {
 
 
     private boolean enoughResourses(int number){
-        if (number <= resourse){
+        if (number <= resourse.get()){
             writer.writeInLog(new Object[] {"server give", number});
             return true;
         }else{
@@ -37,21 +38,17 @@ public class Manager extends Thread {
         }
     }
 
-    public synchronized void getResourses(int number){
+    public void getResourses(int number){
         if(enoughResourses(number)){
-            synchronized(this) {
-                resourse -= number;
-            }
+            resourse.getAndAdd(-number);
         }else{
             throw new NoSuchElementException("not enough resourses");
         }
         return;
     }
 
-    public synchronized void returnResourses(int number){
-        synchronized (this) {
-            resourse += number;
-        }
+    public void returnResourses(int number){
+        resourse.getAndAdd(number);
         writer.writeInLog(new Object[] {"server get", number, "back"});
     }
 
