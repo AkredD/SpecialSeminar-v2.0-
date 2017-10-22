@@ -12,9 +12,9 @@ import java.util.StringTokenizer;
  * Created by user on 25.09.2017.
  */
 
-
+//fixed synchronized resourse
 public class Manager extends Thread {
-    private static int resourse;
+    private static  int resourse;
     private static int workingTime;
     private Writer writer;
 
@@ -39,7 +39,9 @@ public class Manager extends Thread {
 
     public synchronized void getResourses(int number){
         if(enoughResourses(number)){
-            resourse -= number;
+            synchronized(this) {
+                resourse -= number;
+            }
         }else{
             throw new NoSuchElementException("not enough resourses");
         }
@@ -47,7 +49,9 @@ public class Manager extends Thread {
     }
 
     public synchronized void returnResourses(int number){
-        resourse += number;
+        synchronized (this) {
+            resourse += number;
+        }
         writer.writeInLog(new Object[] {"server get", number, "back"});
     }
 

@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
  * Created by user on 29.09.2017.
  */
 
-
+//fixed new Comparator() was replaced by lamda
 public class Parser {
     private static List <Employee> people;
     public Parser(List <Employee> people){
@@ -20,22 +20,12 @@ public class Parser {
     public static int maxSalary(){
         //return people.stream().reduce((a, b) -> new Employee(null, null, Math.max(a.salary, b.salary))).get().salary;
         //return people.stream().mapToInt((e) -> e.salary).max().getAsInt();
-        return people.stream().max(new Comparator<Employee>() {
-            @Override
-            public int compare(Employee o1, Employee o2) {
-                return o1.salary - o2.salary;
-            }
-        }).get().salary;
+        return people.stream().max((o1, o2) -> (o1.salary - o2.salary)).get().salary;
     }
     public static int minSalary() {
         //return people.stream().reduce((a, b) -> new Employee(null, null, Math.min(a.salary, b.salary))).get().salary;
         //return people.stream().mapToInt((e) -> e.salary).min().getAsInt();
-        return people.stream().min(new Comparator<Employee>() {
-            @Override
-            public int compare(Employee o1, Employee o2) {
-                return o1.salary - o2.salary;
-            }
-        }).get().salary;
+        return people.stream().min((o1, o2) -> (o1.salary - o2.salary)).get().salary;
     }
     public static double averageSalary(){
         return people.stream().mapToInt((e) -> e.salary).average().getAsDouble();

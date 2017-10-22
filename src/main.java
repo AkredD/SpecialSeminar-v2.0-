@@ -25,8 +25,8 @@ public class main {
         //threadTest.main(new String[]{});
         //mainTreeTest treeTest = new mainTreeTest();
         //mainTreeTest.main(new String[]{});
-        //mainParseTest parseTest = new mainParseTest();
-        //parseTest.main(new String[]{});
+        mainParseTest parseTest = new mainParseTest();
+        parseTest.main(new String[]{});
 
         /*File file = new File("input.txt");
         FileReader fr = new FileReader(file);
