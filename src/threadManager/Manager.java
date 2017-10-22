@@ -38,7 +38,7 @@ public class Manager extends Thread {
         }
     }
 
-    public void getResourses(int number){
+    public synchronized void getResourses(int number){
         if(enoughResourses(number)){
             resourse.getAndAdd(-number);
         }else{
